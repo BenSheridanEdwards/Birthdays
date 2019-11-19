@@ -3,17 +3,20 @@ require 'date'
 class Birthdays
   DATE_FORMAT = '%m-%d'
 
+  attr_reader :list
+
   def initialize
     @list = []
   end
 
   def store(name, date)
-  @list << { name: name, birthday: date }
+    @list << { name: name, birthday: date }
   end
 
   def display
     @list.each do |friend|
       puts "#{friend[:name]}: #{friend[:birthday]}"
+    end
   end
 
   def today
